@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Ramesh Prakash Khade</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-title" href="index.html">Ramesh Khade</a>
+    <nav class="primary-nav">
+      <a href="index.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="skills.html">Skills</a>
+      <a href="collaborations.html">Collaborations</a>
+      <a href="timelines.html">Timelines</a>
+      <a href="portfolio.html">Portfolio</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container panel">
+      <h2>Projects</h2>
+      <p class="muted">Each card shows project title, start year (only) and a concise summary. Hover a card for emphasis.</p>
+
+      <div id="projects-grid" class="projects-grid"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><small>© Ramesh Prakash Khade</small></footer>
+
+  <script src="projects-data.js"></script>
+  <script>
+    (function () {
+      function getStartYear(duration, yearGroup){
+        if (!duration && yearGroup) {
+          const y = (''+yearGroup).match(/\b(19|20)\d{2}\b/);
+          return y ? y[0] : yearGroup;
+        }
+        if (!duration) return '';
+        const m = duration.match(/\b(19|20)\d{2}\b/);
+        return m ? m[0] : duration;
+      }
+
+      const logoMap = {
+        "UNESCO": "https://upload.wikimedia.org/wikipedia/commons/6/6f/UNESCO_Logo_EN.svg",
+        "UNICEF": "https://upload.wikimedia.org/wikipedia/commons/0/02/UNICEF_Logo.svg",
+        "KPMG": "https://upload.wikimedia.org/wikipedia/commons/5/55/KPMG_logo.svg",
+        "Google": "https://www.gstatic.com/devrel-devsite/prod/vd3f1c1f6a1b9d9e3ca2b7bb5f8e6f3f2b3b5a4f1c8fcf/brand/logo_lockup_google.svg",
+        "Capgemini": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Capgemini-logo.svg",
+        "BCG": "https://upload.wikimedia.org/wikipedia/commons/2/23/BCG_Logo.svg",
+        "Cognizant": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Cognizant_logo.svg"
+      };
+
+      function detectLogo(p){
+        const text = (p.title + ' ' + (p.summary || '') + ' ' + (p.yearGroup || '')).toLowerCase();
+        for (const k of Object.keys(logoMap)){
+          if (text.includes(k.toLowerCase())) return logoMap[k];
+        }
+        if (text.includes('tiss')) return 'https://upload.wikimedia.org/wikipedia/en/e/e1/TISS_Logo.png';
+        return 'https://via.placeholder.com/200x80?text=Logo';
+      }
+
+      const grid = document.getElementById('projects-grid');
+      if (!grid || !window.projects) return;
+      grid.innerHTML = '';
+
+      const sorted = window.projects.slice().sort((a,b) => {
+        const ay = parseInt(getStartYear(a.duration, a.yearGroup) || '0', 10) || 0;
+        const by = parseInt(getStartYear(b.duration, b.yearGroup) || '0', 10) || 0;
+        return by - ay;
+      });
+
+      sorted.forEach(p => {
+        const startYear = getStartYear(p.duration, p.yearGroup);
+        const card = document.createElement('article');
+        card.className = 'project-card';
+        const logo = detectLogo(p);
+        card.innerHTML = `
+          <div class="proj-top">
+            <img class="proj-logo" src="${logo}" alt="${p.title} logo" onerror="this.src='https://via.placeholder.com/200x80?text=Logo'">
+            <div>
+              <h3 class="title">${p.title}</h3>
+              <div class="meta">${startYear ? startYear : ''}</div>
+            </div>
+          </div>
+          <p class="summary">${p.summary || ''}</p>
+          <p style="margin-top:12px"><a href="projects/project-${(String(p.id||p.title).replace(/\s+/g,'-').replace(/[^a-zA-Z0-9-_]/g,'').toLowerCase())}.html" class="small-link">Open project</a></p>
+        `;
+        grid.appendChild(card);
+      });
+
+      if (window.feather) feather.replace();
+    })();
+  </script>
+</body>
+</html>

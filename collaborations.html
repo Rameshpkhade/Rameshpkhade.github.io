@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Collaborations — Ramesh Prakash Khade</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-title" href="index.html">Ramesh Khade</a>
+    <nav class="primary-nav">
+      <a href="index.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="timelines.html">Timelines</a>
+      <a href="portfolio.html">Portfolio</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container panel">
+      <h2>Collaborations & Partnerships</h2>
+      <p class="muted">Grouped into national/international partners and state/local partners. Logos are provided when a reliable public logo was found; placeholders otherwise.</p>
+
+      <h3>Key national & international partners</h3>
+      <div id="national-logos" class="logo-grid"></div>
+
+      <h3>State & DIET partners</h3>
+      <div id="state-logos" class="logo-grid"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><small>© Ramesh Prakash Khade</small></footer>
+
+  <script>
+    (function(){
+      const national = [
+        { name: 'UNESCO', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/UNESCO_Logo_EN.svg', url:'https://en.unesco.org' },
+        { name: 'UNICEF', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/02/UNICEF_Logo.svg', url:'https://www.unicef.org' },
+        { name: 'KPMG', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/55/KPMG_logo.svg', url:'https://home.kpmg' },
+        { name: 'Cognizant Foundation', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Cognizant_logo.svg', url:'#' },
+        { name: 'Google for Education', logo: 'https://www.gstatic.com/devrel-devsite/prod/vd3f1c1f6a1b9d9e3ca2b7bb5f8e6f3f2b3b5a4f1c8fcf/brand/logo_lockup_google.svg', url:'https://edu.google.com' },
+        { name: 'BCG', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/23/BCG_Logo.svg', url:'https://www.bcg.com' },
+        { name: 'Tata Trusts', logo: 'https://via.placeholder.com/160x60?text=Tata+Trusts', url:'https://www.tatatrusts.org' },
+        { name: 'MIT', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg', url:'https://www.mit.edu' }
+      ];
+
+      const state = [
+        { name: 'SCERT Telangana', logo: 'https://via.placeholder.com/140x60?text=SCERT+Telangana', url:'#' },
+        { name: 'SCERT Delhi', logo: 'https://via.placeholder.com/140x60?text=SCERT+Delhi', url:'#' },
+        { name: 'DIET Karnataka', logo: 'https://via.placeholder.com/140x60?text=DIET+Karnataka', url:'#' },
+        { name: 'DIET Uttar Pradesh', logo: 'https://via.placeholder.com/140x60?text=DIET+Uttar+Pradesh', url:'#' },
+        { name: 'DIET Assam', logo: 'https://via.placeholder.com/140x60?text=DIET+Assam', url:'#' },
+        { name: 'Mizoram Government', logo: 'https://via.placeholder.com/140x60?text=Mizoram+Govt', url:'#' },
+        { name: 'Rajasthan Government', logo: 'https://via.placeholder.com/140x60?text=Rajasthan+Govt', url:'#' },
+        { name: 'Telangana Government', logo: 'https://via.placeholder.com/140x60?text=Telangana+Govt', url:'#' }
+      ];
+
+      function render(list, containerId){
+        const c = document.getElementById(containerId);
+        if (!c) return;
+        c.innerHTML = '';
+        list.forEach(p => {
+          const card = document.createElement('div');
+          card.className = 'partner-card';
+          card.innerHTML = `<a href="${p.url||'#'}" target="_blank" rel="noopener"><img src="${p.logo}" alt="${p.name} logo" onerror="this.src='https://via.placeholder.com/140x60?text=Logo'"><div class="partner-name">${p.name}</div></a>`;
+          c.appendChild(card);
+        });
+      }
+
+      render(national, 'national-logos');
+      render(state, 'state-logos');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Experience — Ramesh Prakash Khade</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-title" href="index.html">Ramesh Khade</a>
+    <nav class="primary-nav">
+      <a href="index.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="collaborations.html">Collaborations</a>
+      <a href="timelines.html">Timelines</a>
+      <a href="portfolio.html">Portfolio</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container panel">
+      <h2>Experience</h2>
+      <p class="muted">Latest roles appear first. Brief job descriptions are shown under each role.</p>
+
+      <div id="experience-list" class="experience-stack"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><small>© Ramesh Prakash Khade</small></footer>
+
+  <script>
+    (function () {
+      const experiences = [
+        {
+          id: 'tiss-2025',
+          title: 'Communications & Social Media Officer — Tata Institute of Social Sciences (TISS)',
+          period: '1 May 2025 — Present',
+          desc: 'Lead institutional communications, multimedia and social media strategy. Oversee editorial planning, analytics, PR/media engagement, brand management, event promotion and cross-department campaigns.'
+        },
+        {
+          id: 'cete-2017',
+          title: 'Communications Officer — CETE, TISS',
+          period: 'Sept 2017 — 30 April 2025',
+          desc: 'Designed print & digital curricula resources, led video production and localisation into English, Hindi, Marathi and Telugu. Supported faculty content development for online learning and coordinated communications for 25+ projects.'
+        },
+        {
+          id: 'comm-assistant',
+          title: 'Communications Assistant — Multiple assignments (project-based)',
+          period: '2017 — 2022 (multiple short assignments)',
+          desc: 'Prepared PPTs and module materials for e-PG Pathshala modules, performed proofreading and reference work, assisted in content curation and supported dissemination activities.'
+        },
+        {
+          id: 'saikripa',
+          title: 'Accounts & Operations — Saikripa Cable Network',
+          period: '6 Aug 2013 — 30 May 2015',
+          desc: 'Managed billing, account records, renewed and registered internet users and IDs, and performed bookkeeping tasks.'
+        },
+        {
+          id: 'fieldwork',
+          title: 'Fieldwork & Community Roles — YUVA, ActionAid, ARCH and Special Cell for Women & Children',
+          period: '2015 — 2016',
+          desc: 'Community profiling, surveys, PRA exercises, organising awareness programs and working with survivors of domestic violence for counselling and empowerment interventions.'
+        }
+      ];
+
+      const out = document.getElementById('experience-list');
+      experiences.forEach(ex => {
+        const card = document.createElement('article');
+        card.className = 'exp-card';
+        card.innerHTML = `
+          <header class="exp-header">
+            <div class="exp-date">${ex.period}</div>
+            <h3>${ex.title}</h3>
+          </header>
+          <p class="exp-body">${ex.desc}</p>
+        `;
+        out.appendChild(card);
+      });
+
+      if (window.feather) feather.replace();
+    })();
+  </script>
+</body>
+</html>
