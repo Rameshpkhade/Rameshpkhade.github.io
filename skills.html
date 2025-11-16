@@ -1,142 +1,207 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Skills — Ramesh Prakash Khade</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="scripts.js" defer></script>
+  
+  <meta name="author" content="Ramesh Prakash Khade">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand-title" href="index.html">Ramesh Khade</a>
-    <nav class="primary-nav">
-      <a href="index.html">About</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html">Projects</a>
-      <a href="collaborations.html">Collaborations</a>
-      <a href="timelines.html">Timelines</a>
-      <a href="portfolio.html">Portfolio</a>
-    </nav>
-  </header>
+  <a class="brand-title" href="index.html">Ramesh Khade</a>
+  <!-- Theme Toggle Button (ADD THIS BACK) -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme"></button>
+
+  <nav class="primary-nav">
+    <a href="index.html">About</a>
+    <a href="experience.html">Experiences</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="timelines.html">Timeline</a>
+    <a href="collaborations.html">Collaboration</a>
+  </nav>
+</header>
+
 
   <main class="page">
-    <div class="container panel">
-      <h2>Skills & Proficiency</h2>
-      <p class="muted">Software tools and professional competencies presented visually. Percentages come from your input.</p>
+    <aside class="left-column">
+      <img class="avatar" src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="Ramesh Prakash Khade">
+      <h1 class="name">Skills</h1>
+      <p class="muted">Technical expertise and professional competencies across communications, design, and education technology.</p>
+    </aside>
 
-      <div class="skills-columns">
-        <div class="skills-left">
-          <h3>Software & Tools</h3>
-          <div class="software-grid">
-            <div class="software-item" data-percent="80">
-              <div class="sw-meta"><i data-feather="triangle"></i><div><strong>Adobe Illustrator (Ai)</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
+    <section class="main-column">
+      <article class="panel">
+        <h2>Professional Skills</h2>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
+              </svg>
+              Strategic Communications
+            </h3>
+            <ul class="skill-list">
+              <li>Communication Planning</li>
+              <li>Public Relations</li>
+              <li>Media Management</li>
+              <li>Brand Strategy</li>
+              <li>Stakeholder Engagement</li>
+              <li>Crisis Communication</li>
+            </ul>
+          </div>
 
-            <div class="software-item" data-percent="95">
-              <div class="sw-meta"><i data-feather="package"></i><div><strong>InDesign (Id)</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              Social Media & Digital
+            </h3>
+            <ul class="skill-list">
+              <li>Instagram Management</li>
+              <li>LinkedIn Strategy</li>
+              <li>YouTube Content</li>
+              <li>Facebook Administration</li>
+              <li>X/Twitter Management</li>
+              <li>Analytics & Reporting</li>
+            </ul>
+          </div>
 
-            <div class="software-item" data-percent="40">
-              <div class="sw-meta"><i data-feather="layers"></i><div><strong>Photoshop</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6-3 6 3v6l-6 3-6-3V9z"></path>
+                <polyline points="9 22 9 12"></polyline>
+                <polyline points="15 22 15 12"></polyline>
+                <polyline points="9 12 6 9"></polyline>
+                <polyline points="15 12 18 9"></polyline>
+              </svg>
+              Multimedia & Design
+            </h3>
+            <ul class="skill-list">
+              <li>Video Production</li>
+              <li>Graphic Design</li>
+              <li>Motion Graphics</li>
+              <li>Photo Editing</li>
+              <li>UI/UX Design</li>
+              <li>Infographic Design</li>
+            </ul>
+          </div>
 
-            <div class="software-item" data-percent="100">
-              <div class="sw-meta"><i data-feather="feather"></i><div><strong>Canva</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              Instructional Design
+            </h3>
+            <ul class="skill-list">
+              <li>Curriculum Development</li>
+              <li>Learning Material Design</li>
+              <li>MOOC Development</li>
+              <li>E-learning Content</li>
+              <li>Assessment Design</li>
+              <li>Pedagogical Strategy</li>
+            </ul>
+          </div>
 
-            <div class="software-item" data-percent="80">
-              <div class="sw-meta"><i data-feather="camera"></i><div><strong>Photography</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+              Technical Writing
+            </h3>
+            <ul class="skill-list">
+              <li>Documentation</li>
+              <li>Content Writing</li>
+              <li>Copywriting</li>
+              <li>Report Writing</li>
+              <li>Research Writing</li>
+              <li>Localization</li>
+            </ul>
+          </div>
 
-            <div class="software-item" data-percent="45">
-              <div class="sw-meta"><i data-feather="video"></i><div><strong>Videography</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="1"></circle>
+                <path d="M12 1v6m0 6v6"></path>
+                <path d="M4.22 4.22l4.24 4.24m2.12 2.12l4.24 4.24"></path>
+                <path d="M1 12h6m6 0h6"></path>
+                <path d="M4.22 19.78l4.24-4.24m2.12-2.12l4.24-4.24"></path>
+                <path d="M12 19v-6m0-6V1"></path>
+                <path d="M19.78 19.78l-4.24-4.24m-2.12-2.12l-4.24-4.24"></path>
+                <path d="M23 12h-6m-6 0H5"></path>
+                <path d="M19.78 4.22l-4.24 4.24m-2.12 2.12l-4.24 4.24"></path>
+              </svg>
+              Project Management
+            </h3>
+            <ul class="skill-list">
+              <li>Project Coordination</li>
+              <li>Team Leadership</li>
+              <li>Timeline Management</li>
+              <li>Resource Planning</li>
+              <li>Stakeholder Management</li>
+              <li>Quality Assurance</li>
+            </ul>
+          </div>
 
-            <div class="software-item" data-percent="60">
-              <div class="sw-meta"><i data-feather="edit-2"></i><div><strong>Video Editing</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              Languages
+            </h3>
+            <ul class="skill-list">
+              <li>English (Fluent)</li>
+              <li>Hindi (Fluent)</li>
+              <li>Marathi (Fluent)</li>
+              <li>Telugu (Conversational)</li>
+            </ul>
+          </div>
 
-            <div class="software-item" data-percent="60">
-              <div class="sw-meta"><i data-feather="hexagon"></i><div><strong>Affinity Designer</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
-
-            <div class="software-item" data-percent="65">
-              <div class="sw-meta"><i data-feather="award"></i><div><strong>Brand Development</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
-
-            <div class="software-item" data-percent="75">
-              <div class="sw-meta"><i data-feather="trending-up"></i><div><strong>Digital Marketing</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
-
-            <div class="software-item" data-percent="55">
-              <div class="sw-meta"><i data-feather="repeat"></i><div><strong>Design Thinking</strong><div class="sw-score">0%</div></div></div>
-              <div class="progress"><div class="progress-bar"></div></div>
-            </div>
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
+                <line x1="12" y1="12" x2="20" y2="7.5"></line>
+                <line x1="12" y1="12" x2="12" y2="21"></line>
+                <line x1="12" y1="12" x2="4" y2="7.5"></line>
+              </svg>
+              Tools & Software
+            </h3>
+            <ul class="skill-list">
+              <li>Adobe Creative Suite</li>
+              <li>Canva</li>
+              <li>Google Workspace</li>
+              <li>Microsoft Office</li>
+              <li>Figma</li>
+              <li>Notion</li>
+              <li>Asana</li>
+            </ul>
           </div>
         </div>
-
-        <div class="skills-right">
-          <h3>Competencies</h3>
-          <div class="competency-grid">
-            <div class="competency-card" data-percent="85">
-              <div class="comp-title">Curriculum Development</div>
-              <div class="comp-score">0/100</div>
-              <div class="progress"><div class="progress-bar"></div></div>
-              <div class="comp-note muted">Strong experience designing curricula for education and social work.</div>
-            </div>
-
-            <div class="competency-card" data-percent="80">
-              <div class="comp-title">Photography & Videography</div>
-              <div class="comp-score">0/100</div>
-              <div class="progress"><div class="progress-bar"></div></div>
-              <div class="comp-note muted">Solid visual storytelling for educational content.</div>
-            </div>
-
-            <div class="competency-card" data-percent="75">
-              <div class="comp-title">Video Editing & Production</div>
-              <div class="comp-score">0/100</div>
-              <div class="progress"><div class="progress-bar"></div></div>
-              <div class="comp-note muted">Proficient in video creation for educational purposes.</div>
-            </div>
-
-            <div class="competency-card" data-percent="80">
-              <div class="comp-title">Brand Development & Strategy</div>
-              <div class="comp-score">0/100</div>
-              <div class="progress"><div class="progress-bar"></div></div>
-              <div class="comp-note muted">Experience shaping institutional brand identities.</div>
-            </div>
-
-            <div class="competency-card" data-percent="85">
-              <div class="comp-title">Digital Literacy</div>
-              <div class="comp-score">0/100</div>
-              <div class="progress"><div class="progress-bar"></div></div>
-              <div class="comp-note muted">Excellent at advocating and teaching digital literacy concepts.</div>
-            </div>
-
-            <div class="competency-card" data-percent="80">
-              <div class="comp-title">Research & Data Analysis</div>
-              <div class="comp-score">0/100</div>
-              <div class="progress"><div class="progress-bar"></div></div>
-              <div class="comp-note muted">Good grasp of qualitative and quantitative methods.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </article>
+    </section>
   </main>
 
-  <footer class="site-footer"><small>© Ramesh Prakash Khade</small></footer>
+  <footer class="site-footer">
+    <small>© Ramesh Prakash Khade</small>
+  </footer>
 
-  <script src="scripts.js"></script>
 </body>
 </html>

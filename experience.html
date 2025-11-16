@@ -1,86 +1,107 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Experience — Ramesh Prakash Khade</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="scripts.js" defer></script>
+  
+  <meta name="author" content="Ramesh Prakash Khade">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand-title" href="index.html">Ramesh Khade</a>
-    <nav class="primary-nav">
-      <a href="index.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a href="collaborations.html">Collaborations</a>
-      <a href="timelines.html">Timelines</a>
-      <a href="portfolio.html">Portfolio</a>
-    </nav>
-  </header>
+ <header class="site-header">
+  <a class="brand-title" href="index.html">Ramesh Khade</a>
+  <!-- Theme Toggle Button (ADD THIS BACK) -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme"></button>
+  <nav class="primary-nav">
+    <a href="index.html">About</a>
+    <a href="experience.html">Experiences</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="timelines.html">Timeline</a>
+    <a href="collaborations.html">Collaboration</a>
+  </nav>
+</header>
+
 
   <main class="page">
-    <div class="container panel">
-      <h2>Experience</h2>
-      <p class="muted">Latest roles appear first. Brief job descriptions are shown under each role.</p>
+    <aside class="left-column">
+      <img class="avatar" src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="Ramesh Prakash Khade">
+      <h1 class="name">Experience</h1>
+      <p class="muted">Professional journey and key roles in communications, education, and multimedia.</p>
+    </aside>
 
-      <div id="experience-list" class="experience-stack"></div>
-    </div>
+    <section class="main-column">
+      <article class="panel">
+        <h2>Professional Experience</h2>
+        
+        <div class="experience-item">
+          <div class="experience-title">Communications and Social Media Officer</div>
+          <div class="experience-company">Tata Institute of Social Sciences (TISS)</div>
+          <div class="experience-duration">Sept 2017 - Present (8+ years)</div>
+          <div class="experience-description">
+            Develop and execute strategic communication plans for institutional initiatives. Manage social media presence across Instagram, X, LinkedIn, YouTube, and Facebook. Handle public relations, media engagement, and brand consistency. Provide analytics on campaign performance and audience engagement. Support communications for the Centre of Excellence in Teacher Education (CETE) and various education technology projects.
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-title">Resource Assistant & Communications Coordinator</div>
+          <div class="experience-company">Development Management Institute & TISS</div>
+          <div class="experience-duration">Feb 2017 - Aug 2017</div>
+          <div class="experience-description">
+            Provided electronic resources and research support. Coordinated communications for development projects. Assisted in content curation and resource organization for institutional use.
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-title">Business Facilitator & Correspondent</div>
+          <div class="experience-company">National Skill Development Corporation (NSDC)</div>
+          <div class="experience-duration">2014 - 2015</div>
+          <div class="experience-description">
+            Facilitated business development and community engagement. Worked as a business correspondent supporting financial inclusion initiatives.
+          </div>
+        </div>
+
+        <h2 style="margin-top: 3rem;">Education</h2>
+
+        <div class="experience-item">
+          <div class="experience-title">M.A. in Education and Technology</div>
+          <div class="experience-company">Tata Institute of Social Sciences, Mumbai</div>
+          <div class="experience-duration">2022 - 2024</div>
+          <div class="experience-description">
+            Grade: A-. Capstone Project: "Using AI to Design and Develop Multimedia Artefacts for an Online (MOOC) Course". Specialized in instructional design, multimedia production, and educational technology integration.
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-title">M.A. in Social Work in Children and Families</div>
+          <div class="experience-company">Tata Institute of Social Sciences, Mumbai</div>
+          <div class="experience-duration">2013 - 2015</div>
+          <div class="experience-description">
+            Grade: B+. Focused on child welfare, family support systems, and community development. Field work included counseling for domestic violence survivors and community profiling.
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-title">Bachelor of Commerce</div>
+          <div class="experience-company">N.G. Acharya & D.K. Marathe College, Mumbai</div>
+          <div class="experience-duration">2012 - 2015</div>
+          <div class="experience-description">
+            Grade: B. Foundation in business, finance, and management principles.
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
 
-  <footer class="site-footer"><small>© Ramesh Prakash Khade</small></footer>
+  <footer class="site-footer">
+    <small>© Ramesh Prakash Khade</small>
+  </footer>
 
-  <script>
-    (function () {
-      const experiences = [
-        {
-          id: 'tiss-2025',
-          title: 'Communications & Social Media Officer — Tata Institute of Social Sciences (TISS)',
-          period: '1 May 2025 — Present',
-          desc: 'Lead institutional communications, multimedia and social media strategy. Oversee editorial planning, analytics, PR/media engagement, brand management, event promotion and cross-department campaigns.'
-        },
-        {
-          id: 'cete-2017',
-          title: 'Communications Officer — CETE, TISS',
-          period: 'Sept 2017 — 30 April 2025',
-          desc: 'Designed print & digital curricula resources, led video production and localisation into English, Hindi, Marathi and Telugu. Supported faculty content development for online learning and coordinated communications for 25+ projects.'
-        },
-        {
-          id: 'comm-assistant',
-          title: 'Communications Assistant — Multiple assignments (project-based)',
-          period: '2017 — 2022 (multiple short assignments)',
-          desc: 'Prepared PPTs and module materials for e-PG Pathshala modules, performed proofreading and reference work, assisted in content curation and supported dissemination activities.'
-        },
-        {
-          id: 'saikripa',
-          title: 'Accounts & Operations — Saikripa Cable Network',
-          period: '6 Aug 2013 — 30 May 2015',
-          desc: 'Managed billing, account records, renewed and registered internet users and IDs, and performed bookkeeping tasks.'
-        },
-        {
-          id: 'fieldwork',
-          title: 'Fieldwork & Community Roles — YUVA, ActionAid, ARCH and Special Cell for Women & Children',
-          period: '2015 — 2016',
-          desc: 'Community profiling, surveys, PRA exercises, organising awareness programs and working with survivors of domestic violence for counselling and empowerment interventions.'
-        }
-      ];
-
-      const out = document.getElementById('experience-list');
-      experiences.forEach(ex => {
-        const card = document.createElement('article');
-        card.className = 'exp-card';
-        card.innerHTML = `
-          <header class="exp-header">
-            <div class="exp-date">${ex.period}</div>
-            <h3>${ex.title}</h3>
-          </header>
-          <p class="exp-body">${ex.desc}</p>
-        `;
-        out.appendChild(card);
-      });
-
-      if (window.feather) feather.replace();
-    })();
-  </script>
 </body>
 </html>

@@ -4,31 +4,39 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Collaborations — Ramesh Prakash Khade</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand-title" href="index.html">Ramesh Khade</a>
-    <nav class="primary-nav">
-      <a href="index.html">About</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a href="timelines.html">Timelines</a>
-      <a href="portfolio.html">Portfolio</a>
-    </nav>
-  </header>
+  <a class="brand-title" href="index.html">Ramesh Khade</a>
+  <!-- Theme Toggle Button (ADD THIS BACK) -->
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+    <svg id="theme-icon" viewBox="0 0 24 24" fill="currentColor">
+      <!-- This icon will switch between sun & moon via JS -->
+      <path d="M12 3.1a1 1 0 0 1 1 1V6a1 1 0 1 1-2 0V4.1a1 1 0 0 1 1-1zm0 12.9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.9-4a1 1 0 0 1-1 1H18a1 1 0 1 1 0-2h.9a1 1 0 0 1 1 1zM6 13a1 1 0 1 1 0-2H4.1a1 1 0 1 1 0 2H6zm9.657 5.657a1 1 0 0 1 1.414 0l1.06 1.06a1 1 0 1 1-1.414 1.415l-1.06-1.061a1 1 0 0 1 0-1.414zM5.869 6.282A1 1 0 1 1 7.283 4.87l-1.06 1.06a1 1 0 0 1-1.415-1.414l1.06-1.06zm12.02 0-1.06-1.06a1 1 0 0 1 1.414-1.414l1.06 1.06a1 1 0 0 1-1.414 1.414zM4.81 18.717a1 1 0 0 1 1.415-1.414l1.06 1.06a1 1 0 0 1-1.414 1.415l-1.061-1.061z"/>
+    </svg>
+  </button>  <nav class="primary-nav">
+    <a href="index.html">About</a>
+    <a href="experience.html">Experiences</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="timelines.html">Timeline</a>
+    <a href="collaborations.html">Collaboration</a>
+  </nav>
+</header>
+
 
   <main class="page">
     <div class="container panel">
       <h2>Collaborations & Partnerships</h2>
-      <p class="muted">Grouped into national/international partners and state/local partners. Logos are provided when a reliable public logo was found; placeholders otherwise.</p>
+      <p class="muted">Grouped into national/international partners and state/local partners. These organizations represent key collaborations in my work on teacher education, educational research, and capacity building initiatives.</p>
 
-      <h3>Key national & international partners</h3>
-      <div id="national-logos" class="logo-grid"></div>
+      <h3>Key National & International Partners</h3>
+      <div id="national-logos" class="partner-grid"></div>
 
-      <h3>State & DIET partners</h3>
-      <div id="state-logos" class="logo-grid"></div>
+      <h3>State & DIET Partners</h3>
+      <div id="state-logos" class="partner-grid"></div>
     </div>
   </main>
 
@@ -40,18 +48,19 @@
         { name: 'UNESCO', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/UNESCO_Logo_EN.svg', url:'https://en.unesco.org' },
         { name: 'UNICEF', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/02/UNICEF_Logo.svg', url:'https://www.unicef.org' },
         { name: 'KPMG', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/55/KPMG_logo.svg', url:'https://home.kpmg' },
-        { name: 'Cognizant Foundation', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Cognizant_logo.svg', url:'#' },
+        { name: 'Cognizant Foundation', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Cognizant_logo.svg', url:'https://www.cognizantfoundation.org' },
         { name: 'Google for Education', logo: 'https://www.gstatic.com/devrel-devsite/prod/vd3f1c1f6a1b9d9e3ca2b7bb5f8e6f3f2b3b5a4f1c8fcf/brand/logo_lockup_google.svg', url:'https://edu.google.com' },
         { name: 'BCG', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/23/BCG_Logo.svg', url:'https://www.bcg.com' },
-        { name: 'Tata Trusts', logo: 'https://via.placeholder.com/160x60?text=Tata+Trusts', url:'https://www.tatatrusts.org' },
-        { name: 'MIT', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg', url:'https://www.mit.edu' }
+        { name: 'Tata Trusts', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Tata_Trusts_logo.svg', url:'https://www.tatatrusts.org' },
+        { name: 'MIT', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg', url:'https://www.mit.edu' },
+        { name: 'Capgemini Foundation', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Capgemini-logo.svg', url:'https://www.capgemini.com/foundation' }
       ];
 
       const state = [
-        { name: 'SCERT Telangana', logo: 'https://via.placeholder.com/140x60?text=SCERT+Telangana', url:'#' },
-        { name: 'SCERT Delhi', logo: 'https://via.placeholder.com/140x60?text=SCERT+Delhi', url:'#' },
+        { name: 'SCERT Telangana', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/SCERT_Telangana_logo.png/200px-SCERT_Telangana_logo.png', url:'https://scert.telangana.gov.in' },
+        { name: 'SCERT Delhi', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/SCERT_Delhi_logo.png/200px-SCERT_Delhi_logo.png', url:'https://scertdelhi.nic.in' },
         { name: 'DIET Karnataka', logo: 'https://via.placeholder.com/140x60?text=DIET+Karnataka', url:'#' },
-        { name: 'DIET Uttar Pradesh', logo: 'https://via.placeholder.com/140x60?text=DIET+Uttar+Pradesh', url:'#' },
+        { name: 'DIET Uttar Pradesh', logo: 'https://via.placeholder.com/140x60?text=DIET+UP', url:'#' },
         { name: 'DIET Assam', logo: 'https://via.placeholder.com/140x60?text=DIET+Assam', url:'#' },
         { name: 'Mizoram Government', logo: 'https://via.placeholder.com/140x60?text=Mizoram+Govt', url:'#' },
         { name: 'Rajasthan Government', logo: 'https://via.placeholder.com/140x60?text=Rajasthan+Govt', url:'#' },
@@ -65,7 +74,15 @@
         list.forEach(p => {
           const card = document.createElement('div');
           card.className = 'partner-card';
-          card.innerHTML = `<a href="${p.url||'#'}" target="_blank" rel="noopener"><img src="${p.logo}" alt="${p.name} logo" onerror="this.src='https://via.placeholder.com/140x60?text=Logo'"><div class="partner-name">${p.name}</div></a>`;
+          const link = p.url && p.url !== '#' ? `<a href="${p.url}" target="_blank" rel="noopener">` : '<div>';
+          const linkClose = p.url && p.url !== '#' ? '</a>' : '</div>';
+          card.innerHTML = `
+  ${link}
+    <img src="${p.logo}" alt="${p.name} Logo" class="partner-image">
+    <div class="partner-name">${p.name}</div>
+  ${linkClose}
+`;
+
           c.appendChild(card);
         });
       }

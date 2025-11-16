@@ -1,66 +1,92 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Timelines — Ramesh Prakash Khade</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Timeline — Ramesh Prakash Khade</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="timeline-data.js" defer></script>
+  <script src="scripts.js" defer></script>
+  
+  <meta name="author" content="Ramesh Prakash Khade">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand-title" href="index.html">Ramesh Khade</a>
-    <nav class="primary-nav">
-      <a href="index.html">About</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a href="collaborations.html">Collaborations</a>
-      <a href="portfolio.html">Portfolio</a>
-    </nav>
-  </header>
+  <a class="brand-title" href="index.html">Ramesh Khade</a>
+  <!-- Theme Toggle Button (ADD THIS BACK) -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme"></button>
+  <nav class="primary-nav">
+    <a href="index.html">About</a>
+    <a href="experience.html">Experiences</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="timelines.html">Timeline</a>
+    <a href="collaborations.html">Collaboration</a>
+  </nav>
+</header>
+
 
   <main class="page">
-    <div class="container panel">
-      <h2>Timeline — Education, Fieldwork, Work, Projects & Outputs</h2>
-      <p class="muted">Vertical central timeline. Newest entries appear at the top; oldest at the bottom. Entries alternate sides for visual rhythm.</p>
+    <aside class="left-column">
+      <img class="avatar" src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="Ramesh Prakash Khade">
+      <h1 class="name">Timeline</h1>
+      <p class="muted">A chronological overview of my professional journey, education, and key milestones.</p>
+    </aside>
 
-      <ol class="timeline-vertical" id="full-timeline"></ol>
-    </div>
+    <section class="main-column">
+      <article class="panel">
+        <h2>Professional Journey</h2>
+        
+        <div class="timeline" id="timeline-container">
+          <!-- Timeline items will be rendered here by JavaScript -->
+        </div>
+      </article>
+    </section>
   </main>
 
-  <footer class="site-footer"><small>© Ramesh Prakash Khade</small></footer>
+  <footer class="site-footer">
+    <small>© Ramesh Prakash Khade</small>
+  </footer>
 
   <script>
-    (function () {
-      const entries = [
-        { id:'tiss-2025', year:'2025', title:'Communications & Social Media Officer — Tata Institute of Social Sciences', type:'work', desc:'Lead institutional communications, multimedia and social media strategy; PR & media liaison; analytics and brand management.' },
-        { id:'cete-2017', year:'2017', title:'Communications Officer — CETE, TISS', type:'work', desc:'Design and delivery of learning resources, multimedia production and localisation; support for 25+ projects and stakeholder coordination.' },
-        { id:'telta-2024', year:'2024', title:'TELTA Phase 2 — Technology-enabled learning', type:'project', desc:'Communications & content support for technology-enabled learning programs (TELTA, Capgemini).' },
-        { id:'project-ankur-2023', year:'2023', title:'Project Ankur — State-level program (MP)', type:'project', desc:'Communications and training resource development for Project Ankur.' },
-        { id:'ma-edtech-2023', year:'2023', title:'M.A. Education & Technology (Capstone: AI for multimedia for MOOCs)', type:'education', desc:'Capstone research on using AI to design and develop multimedia artefacts for online courses.' },
-        { id:'published-2018', year:'2018', title:'Published Artwork & Design (Routledge / SCERT)', type:'output', desc:'Designed book covers and visual assets for Routledge series and 120+ SCERT textbooks (multi-language).' },
-        { id:'unicefassam-2020', year:'2020', title:'UNICEF Assam — Digital enabling of teachers (online course)', type:'project', desc:'Course content, digital badges and communications to support teacher enablement during COVID response.' },
-        { id:'clix-2015', year:'2015', title:'Connected Learning Initiative (CLIx) — start', type:'project', desc:'Communications, visual design and online resources for CLIx; worked with partners across states and institutions.' },
-        { id:'ma-sw-2015', year:'2015', title:'M.A. Social Work (Children & Families)', type:'education', desc:'Completed postgraduate programme with fieldwork and community interventions.' },
-        { id:'saikripa-2013', year:'2013', title:'Accounts & Operations — Saikripa Cable Network', type:'work', desc:'Billing, account management and user registrations.' },
-        { id:'ssc-2009', year:'2009', title:'Class X (SSC)', type:'education', desc:'Lower secondary completion (education foundation).' }
-      ];
+    function initTimeline() {
+      const timelineContainer = document.getElementById('timeline-container');
+      
+      if (!window.timelineData) {
+        timelineContainer.innerHTML = '<p class="muted">Timeline data not available.</p>';
+        return;
+      }
 
-      const out = document.getElementById('full-timeline');
-      out.innerHTML = '';
-
-      entries.forEach((e, idx) => {
-        const li = document.createElement('li');
-        li.className = 'timeline-entry ' + (idx % 2 === 0 ? 'right' : 'left');
-        li.innerHTML = `
-          <span class="dot" aria-hidden="true"></span>
-          <div class="entry-time"><strong>${e.year}</strong></div>
-          <h4>${e.title}</h4>
-          <p>${e.desc}</p>
+      timelineContainer.innerHTML = '';
+      
+      window.timelineData.forEach((item, index) => {
+        const timelineItem = document.createElement('div');
+        timelineItem.className = 'timeline-item fade-in';
+        timelineItem.style.animationDelay = (index * 0.1) + 's';
+        
+        timelineItem.innerHTML = `
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">${item.year}</div>
+            <h3 class="timeline-title">${item.title}</h3>
+            <p class="timeline-subtitle">${item.subtitle}</p>
+            <p class="timeline-description">${item.description}</p>
+            <span class="timeline-category">${item.category}</span>
+          </div>
         `;
-        out.appendChild(li);
+        
+        timelineContainer.appendChild(timelineItem);
       });
-    })();
+
+      feather.replace();
+    }
+
+    document.addEventListener('DOMContentLoaded', initTimeline);
   </script>
+
 </body>
 </html>

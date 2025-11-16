@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>All Projects — Ramesh Prakash Khade</title>
+  <title>All Projects — Ramesh Khade</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <div class="site projects-page">
     <aside class="sidebar">
       <div class="profile">
-        <img class="avatar" src="images/profile.jpg" alt="Ramesh Prakash Khade">
-        <h3 class="profile-name">Ramesh Prakash Khade</h3>
+        <img class="avatar" src="images/profile.jpg" alt="Ramesh Khade">
+        <h3 class="profile-name">Ramesh Khade</h3>
         <p class="muted">Communications · Multimedia · Instructional Design</p>
       </div>
 
+      <div style="margin-bottom: 20px;">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme" style="width: 100%; padding: 8px; border-radius: 8px; background: var(--border-color); border: none; cursor: pointer; color: var(--accent);"></button>
+      </div>
       <nav class="nav">
         <a class="nav-link" href="index.html"><i data-feather="arrow-left"></i>Back to Home</a>
         <a class="nav-link" href="index.html#projects"><i data-feather="home"></i>Featured Projects</a>
@@ -35,7 +38,7 @@
         </section>
 
         <footer class="site-footer">
-          <small>© Ramesh Prakash Khade</small>
+          <small>© Ramesh Khade</small>
         </footer>
       </div>
     </main>
@@ -45,7 +48,7 @@
   <script>
     // render all projects using the projects array provided by projects-data.js
     (function () {
-      if (window.feather) feather.replace();
+
 
       function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
